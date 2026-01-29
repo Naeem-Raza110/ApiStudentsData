@@ -1,4 +1,5 @@
 
+
   # Students Directory - React + Tailwind
 
 A modern, responsive React application that displays a list of users fetched from an API and shows detailed information for each user. The UI is built with **Tailwind CSS** and includes smooth hover effects, shadows, and consistent font styling.

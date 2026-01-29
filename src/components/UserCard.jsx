@@ -1,16 +1,20 @@
-const UserCard = ({ user, index, onClick }) => {
+import { useNavigate } from "react-router-dom";
+
+const UserCard = ({ user }) => {
+  const navigate = useNavigate();
+
   return (
     <div
-      onClick={onClick}
-      style={{ animationDelay: `${index * 150}ms` }}
-      className="cursor-pointer rounded-xl p-5 border opacity-0
-                 animate-[fadeUp_0.6s_ease_forwards]
-                 hover:scale-105  transition"
+      onClick={() => navigate(`/user/${user.id}`)}
+      className="cursor-pointer bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1"
     >
-      <h3 className="text-lg font-semibold ">
-        {user.name}
-      </h3>
-      <p className="text-sm text-gray-400">{user.email}</p>
+      {/* Name */}
+      <h3 className="text-2xl font-extrabold text-gray-800 mb-2">{user.name}</h3>
+
+      {/* Details */}
+      <p className="text-gray-700"><span className="font-semibold">Email:</span> {user.email}</p>
+      <p className="text-gray-700"><span className="font-semibold">Phone:</span> {user.phone}</p>
+      <p className="text-gray-700"><span className="font-semibold">Company:</span> {user.company.name}</p>
     </div>
   );
 };
